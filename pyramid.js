@@ -249,19 +249,24 @@ function drawScene(gl, programInfo, buffers, deltaTime) {
 
     // Move a posição do desenho para onde queremos
     // desenhar o quadrado.
-    mat4.translate(modelViewMatrix,    // matriz de destino
-        modelViewMatrix,    // matriz para transladar
-        [0.0, 0.0, -6.0]);  // translação
+    mat4.translate(projectionMatrix,    // matriz de destino
+        projectionMatrix,    // matriz para transladar
+        [0.0, -0.5, -6.0]);  // translação
 
-    mat4.rotate(modelViewMatrix,  // matriz de destino
-        modelViewMatrix,  // matriz para rotacionar
+    mat4.rotate(projectionMatrix,  // matriz de destino
+        projectionMatrix,  // matriz para rotacionar
+        0.5,   // quantidade de radianos a se rotacionar
+        [1, 0, 0]);       // eixo para ser girar em volta
+
+    mat4.rotate(projectionMatrix,  // matriz de destino
+        projectionMatrix,  // matriz para rotacionar
         squareRotation,   // quantidade de radianos a se rotacionar
-        [0, 0, 1]);       // eixo para ser girar em volta
-
-    mat4.rotate(modelViewMatrix,  // matriz de destino
-        modelViewMatrix,  // matriz para rotacionar
-        squareRotation * .7,// quantidade de radianos a se rotacionar * 0.7
         [0, 1, 0]);       // eixo para ser girar em volta
+
+    // mat4.rotate(modelViewMatrix,  // matriz de destino
+    //     modelViewMatrix,  // matriz para rotacionar
+    //     squareRotation * .7,// quantidade de radianos a se rotacionar * 0.7
+    //     [0, 1, 0]);       // eixo para ser girar em volta
 
 
     // Diga ao WebGL como retirar as posições do
