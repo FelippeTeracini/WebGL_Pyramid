@@ -162,11 +162,11 @@ function initBuffers(gl) {
 
     // Definindo uma cor para cada face do cubo
     const faceColors = [
-        [1.0, 0.9, 0.5, 1.0],    // Base: bege
-        [1.0, 0.0, 0.0, 1.0],    // Face frontal: vermelha
-        [0.0, 0.0, 1.0, 1.0],    // Face traseira: azul
-        [1.0, 1.0, 0.0, 1.0],    // Face direita: amarela
-        [1.0, 0.0, 1.0, 1.0],    // Face esquerda: violeta
+        [0.7, 0.4, 0, 1.0],    // Base: bege
+        [0.7, 0.4, 0, 1.0],    // Face frontal: vermelha
+        [0.7, 0.4, 0, 1.0],    // Face traseira: azul
+        [0.7, 0.4, 0, 1.0],    // Face direita: amarela
+        [0.7, 0.4, 0, 1.0],    // Face esquerda: violeta
     ];
 
     // Convertendo o vetor de cores para uma matriz para todos os 24 vértices
@@ -180,7 +180,7 @@ function initBuffers(gl) {
             colors = colors.concat(c, c, c, c);
         }
         else {
-            colors = colors.concat(c, c, c)
+            colors = colors.concat(c, c, [1.0, 0.9, 0.5, 1.0])
         }
 
     }
